@@ -1,0 +1,382 @@
+PYTHON BASIC PRACTICE CODES -I
+
+1. Python Program to Find the Square Root.
+# To take the input from the user
+num = float(input('Enter a number: '))
+num_sqrt = num ** 0.5
+print('The square root of %0.3f is %0.3f'%(num ,num_sqrt))
+
+
+2. Python Program to Add Two Numbers.
+Example 1: Add Two Numbers
+num1 = 1.5
+num2 = 6.3
+# Add two numbers
+sum = num1 + num2
+# Display the sum
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+
+
+3.Python Program to Calculate the Area of a Triangle
+a = float(input('Enter first side: '))
+b = float(input('Enter second side: '))
+c = float(input('Enter third side: '))
+# calculate the semi-perimeter
+s = (a + b + c) / 2
+# calculate the area
+area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+print('The area of the triangle is %0.2f' %area)
+
+
+4. Python Program to Swap Two Variables
+# To take inputs from the user
+x = input('Enter value of x: ')
+y = input('Enter value of y: ')
+# create a temporary variable and swap the values
+temp = x
+x = y
+y = temp
+print('The value of x after swapping: {}'.format(x))
+print('The value of y after swapping: {}'.format(y))
+
+5. Python Program to Convert Kilometers to Miles
+# Taking kilometers input from the user
+kilometers = float(input("Enter value in kilometers: "))
+# conversion factor
+conv_fac = 0.621371
+# calculate miles
+miles = kilometers * conv_fac
+print('%0.2f kilometers is equal to %0.2f miles' %(kilometers,miles))
+
+6.Python Program to Convert Celsius To Fahrenheit
+# Python Program to convert temperature in celsius to fahrenheit
+# change this value for a different result
+celsius = 37.5
+# calculate fahrenheit
+fahrenheit = (celsius * 1.8) + 32
+print('%0.1f degree Celsius is equal to %0.1f degree Fahrenheit' %(celsius,fahrenheit))
+Run Code
+
+
+LIST
+
+1. Python program to interchange first and last elements in a list.
+newList = []
+element = int(input("enter the number of elements you want in list"))
+for i in range(0,element):
+    list_element = input("Enter value here: ")
+    newList.append(list_element)
+newList[0],newList[-1] = newList[-1], newList[0]
+print(newList)
+
+2: Concatenate two lists index-wise
+list1 = ["M", "na", "i", "Ke"] 
+list2 = ["y", "me", "s", "lly"]
+Expected output:  ['My', 'name', 'is', 'Kelly']
+
+list1 = ["M", "na", "i", "Ke"] 
+list2 = ["y", "me", "s", "lly"]
+list3 = [i + j for i, j in zip(list1, list2)]
+print(list3)
+
+3: Given a Python list. Turn every item of a list into its square
+aList = [1, 2, 3, 4, 5, 6, 7]
+aList = [1, 2, 3, 4, 5, 6, 7]
+aList =  [x * x for x in aList]
+print(aList)
+
+4: Concatenate two lists in the following order
+list1 = ["Hello ", "take "]
+list2 = ["Dear", "Sir"]
+Expected output: ['Hello Dear', 'Hello Sir', 'take Dear', 'take Sir']
+
+resList = [x+y for x in list1 for y in list2]
+print(resList)
+
+6: Remove empty strings from the list of strings
+list1 = ["Mike", "", "Emma", "Kelly", "", "Brad"]
+Expected output: ["Mike", "Emma", "Kelly", "Brad"]
+
+resList = list(filter(None, list1))
+print(resList)
+
+
+Dict
+
+1: Below are the two lists convert it into the dictionary
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+Expected output: {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+
+sampleDict = dict(zip(keys, values))
+print(sampleDict)
+
+2.  Merge following two Python dictionaries into one
+dict1 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+dict2 = {'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+Expected output: {'Ten': 10, 'Twenty': 20, 'Thirty': 30, 'Fourty': 40, 'Fifty': 50}
+
+dict3 = {**dict1, **dict2}
+print(dict3)
+
+3. Create a new dictionary by extracting the following keys from a given dictionary
+Given dictionary:
+sampleDict = {  "name": "Kelly",  "age":25,  "salary": 8000,  "city": "New york"}
+Keys to extract  = ["name", "salary"]
+
+newDict = {k: sampleDict[k] for k in keys}
+print(newDict)
+
+4. Check if a value 200 exists in a dictionary
+sampleDict = {'a': 100, 'b': 200, 'c': 300}
+
+print(200 in sampleDict.values())
+
+5. Rename key city to location in the following dictionary
+sampleDict = {  "name": "Kelly",  "age":25,  "salary": 8000,  "city": "New york"}
+Expected output:{  "name": "Kelly",  "age":25,  "salary": 8000,  "location": "New york"}
+
+sampleDict['location'] = sampleDict.pop('city')
+print(sampleDict)
+
+6. Get the key corresponding to the minimum value from the following dictionary
+sampleDict = {  'Physics': 82,  'Math': 65,  'history': 75}
+
+print(min(sampleDict, key=sampleDict.get))
+
+
+
+
+LOOPS
+1. Python program to print only the odd numbers in given range.
+num1 = int(input("Enter the smaller value"))
+num2 = int(input("Enter the larger value"))
+for i in range(num1, num2):
+    if i%2 == 0:
+        continue
+    else:
+        print(i, end  = ", ")
+
+2. Write a python program that prints all the values which are odd and less than 500 from given list of numbers.
+numbers = [
+    951, 402, 984, 651, 360, 69, 408, 319, 601, 485, 980, 507, 725, 547, 544,
+    615, 83, 165, 141, 501, 263, 617, 865, 575, 219, 390, 984, 592, 236, 105, 942, 941,
+    386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
+    958, 609, 842, 451, 688, 753, 854, 685, 93, 857, 440, 380, 126, 721, 328, 753, 470,
+    743, 527
+]
+for i in numbers:
+    if i > 500 or i % 2 == 0:
+        continue
+    else:
+        print(i, end = ", ")
+
+3. Find all the numbers from given list which are factor of both 3, 7 .
+for i in numbers:
+    if i % 3 == 0 and i  % 7 == 0:
+        print(i, end = ", ")
+
+4. FInd the largest number from the given list.
+max = 0
+for i in numbers:
+    if i > max:
+        max = i
+        
+5. print the squares of odd numbers and cube roots of even number from the list above.
+for i in numbers:
+    if i % 2 == 0:
+        print("Cube :", i**3, end = ", ")
+    else:
+        print("Square :",i**2, end = ", ")
+
+6.  Print First 10 natural numbers using while loop
+i = 0
+while i <= 10:
+    print(i)
+    i += 1
+
+7. Print the following pattern
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+print("Second Number Pattern ")
+lastNumber = 6
+for row in range(1, lastNumber):
+    for column in range(1, row + 1):
+        print(column, end=' ')
+    print("")
+
+8. Python Program to find factorial of number.
+
+num = int(input("Enter a number: "))
+factorial = 1
+# check if the number is negative, positive or zero
+if num < 0:
+   print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print("The factorial of",num,"is",factorial)
+
+
+
+
+
+
+IF –ELSE CONSTRUCTS
+1. Python Program to Check if a Number is Odd or Even?
+num = int(input("Enter a number: "))
+if (num % 2) == 0:
+   print("{0} is Even".format(num))
+else:
+   print("{0} is Odd".format(num))
+
+2. Python Program to Check if a Number is Positive, Negative or 0?
+num = float(input("Enter a number: "))
+if num > 0:
+   print("Positive number")
+elif num == 0:
+   print("Zero")
+else:
+   print("Negative number")
+
+3.Python Program to Check Leap Year?
+year = int(input("Enter a year: "))
+if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           print("{0} is a leap year".format(year))
+       else:
+           print("{0} is not a leap year".format(year))
+   else:
+       print("{0} is a leap year".format(year))
+else:
+   print("{0} is not a leap year".format(year))
+
+4. Python Program to Find the Largest Among Three Numbers
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+if (num1 >= num2) and (num1 >= num3):
+   largest = num1
+elif (num2 >= num1) and (num2 >= num3):
+   largest = num2
+else:
+   largest = num3
+print("The largest number is", largest)
+
+1. Python Program to Check if a person can vote or not?
+num = int(input("Enter your age: "))
+if age > 170:
+   print("You can vote")
+else:
+   print("You can not vote")
+
+
+FUNCTIONS
+
+1.  Python Program to Find Numbers Divisible by Another Number
+def divisiblity():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter Second number: "))
+    z = int(input("Enter the number you want to check: "))
+    if x%z == 0 and y %z == 0:
+        print(f"{x},{y} are divisible by {z}")
+    else:
+        print(f"{x},{y} are not divisible by {z}")
+divisiblity()
+
+2. Python program to check if a given number is prime or not.
+def prime(num):
+    # prime numbers are greater than 1
+    if num > 1:
+       # check for factors
+       for i in range(2,num):
+           if (num % i) == 0:
+               print(num,"is not a prime number")
+               print(i,"times",num//i,"is",num)
+               break
+       else:
+           print(num,"is a prime number")
+
+    # if input number is less than
+    # or equal to 1, it is not prime
+    else:
+       print(num,"is not a prime number")
+
+
+
+
+3. Write a python function to find factorial of number.
+def Factorial():
+    num = int(input("Enter a number: "))
+    factorial = 1
+    # check if the number is negative, positive or zero
+    if num < 0:
+       print("Sorry, factorial does not exist for negative numbers")
+    elif num == 0:
+       print("The factorial of 0 is 1")
+    else:
+       for i in range(1,num + 1):
+           factorial = factorial*i
+       print("The factorial of",num,"is",factorial)
+
+4. Python Program to Find HCF
+def compute_hcf(x, y):
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            hcf = i 
+    return hcf
+
+5.Python Program to Find LCM
+def compute_lcm(x, y):
+   if x > y:
+       greater = x
+   else:
+       greater = y
+   while(True):
+       if((greater % x == 0) and (greater % y == 0)):
+           lcm = greater
+           break
+       greater += 1
+   return lcm
+
+6. Write a function func1() such that it can accept a variable length of  argument and print all arguments value
+func1(20, 40, 60)
+func1(80, 100)
+
+def func1(*args):
+    for i in args:
+        print(i)
+
+7.  Create an inner function to calculate the addition in the following way
+Create an outer function that will accept two parameters a and b
+Create an inner function inside an outer function that will calculate the addition of a and b
+At last, an outer function will add 5 into addition and return it
+
+def outerFun(a, b):
+    square = a**2
+    def innerFun(a,b):
+        return a+b
+    add = innerFun(a, b)
+    return add+5
+
+result = outerFun(5, 10)
+print(result)
+
+8. Return the largest item from the given list
+aList = [4, 6, 8, 24, 12, 2]
+print(max(aList))
+
+
+
